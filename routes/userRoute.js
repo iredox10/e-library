@@ -9,6 +9,7 @@ route.get('/admin', controller.get_admin)
 
 route.get('/users', controller.get_users)
 
+
 module.exports = route
 
 
