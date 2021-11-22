@@ -4,9 +4,33 @@
 <body>
     <%- include('./partails/nav.ejs') %> 
     <div class="container">
-        <h1>register new user</h1>
-        <form action="/register" method="POST">
+        <h1 class="top">register new user</h1>
+        <form action="/add-user" method="POST">
+            <div class="mb-3">
+                <label for="firstName">first name</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
 
+            <div class="mb-3">
+                <label for="lastName">last name</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="regNumber">registrartion number</label>
+                <input type="text" name="regNumber" id="regNumber">
+            </div>
+
+            <div class="mb-3">
+                <label for="department">department</label>
+                <input type="text" name="department" id="department">
+            </div>
+            
+            <div class="mb-3">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button class="btn capitalize bg-blue-600 text-white">register</button>
         </form>
     </div>
 </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partails/head.ejs') %> 
+
+<body>
+    <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1 class="top">log in</h1>
+        <form action="/login" method="POST">
+            <div class="mb-3">
+            <label for="regNumber">registration number</label>
+            <input type="text" name="regNumber" id="regNumber">
+        </div>
+
+        <div class="mb-3">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" >
+        </div>
+        <button class="btn bg-blue-600 text-white capitalize rounded">log in</button>
+        </form>
+    </div>
+</body>
+</html>

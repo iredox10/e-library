@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partails/head.ejs') %> 
+
+<body>
+    <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1 class="top">registered users</h1>
+    <% users.forEach(user=>{ %>
+        <table class="w-full my-4">
+            <tr>
+                <th>first name</th>
+                <th>last name</th>
+                <th>registration number</th>
+                <th>department</th>
+                <th>password</th>
+            </tr>
+            <tr>
+                <td><%= user.firstName %> </td>
+                <td><%= user.lastName %> </td>
+                <td><%= user.regNumber %> </td>
+                <td><%= user.department %> </td>
+                <td><%= user.password %> </td>
+            </tr>
+        </table>
+   <% }) %> 
+</div>
+</body>
+</html>

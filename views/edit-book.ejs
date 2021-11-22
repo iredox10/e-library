@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href ="../tailwind/style.css">
+        <title>Document</title>
+    </head>
+<body>
+    <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1 class="top">edit book</h1>
+        <form action="/edit-book/<%= book.id %>?_method=PATCH" method="POST">
+        <div class="mb-3">
+            <label for="bookName">book name</label>
+            <input type="text" name="bookName" id="bookName" value="<%= book.bookName %>">
+        </div>
+        <div class="mb-3">
+            <label for="bookAuthor">book author</label>
+            <input type="text" name="bookAuthor" id="bookAuthor" value="<%= book.bookName %>">
+        </div>
+        <div class="mb-3">
+            <label for="pages">number of pages</label>
+            <input type="number" name="pages" id="pages" value="<%= book.pages %>">
+        </div>
+        <div class="mb-3">
+            <label for="section">section</label>
+            <input type="text" name="section" id="section" value="<%= book.section %>">
+        </div>
+        <button class="btn bg-blue-600 w-full text-white uppercase">edit book</button>
+    </form>
+    </div>
+</body>
+</html>

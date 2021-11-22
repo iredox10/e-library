@@ -3,5 +3,33 @@
     <%- include('./partails/head.ejs') %> 
 <body>
     <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1 class="top">add new book</h1>
+        <form action="/add-book" enctype="multipart/form-data" method="POST">
+        <div class="mb-3">
+            <label for="bookName">book name</label>
+            <input type="text" name="bookName" id="bookName">
+        </div>
+        <div class="mb-3">
+            <label for="bookAuthor">book author</label>
+            <input type="text" name="bookAuthor" id="bookAuthor">
+        </div>
+        <div class="mb-3">
+            <label for="pages">number of pages</label>
+            <input type="number" name="pages" id="pages">
+        </div>
+        <div class="mb-3">
+            <label for="section">section</label>
+            <input type="text" name="section" id="section">
+        </div>
+        
+        <div class="mb-3">
+            <label for="bookCover">book cover</label>
+            <input type="file" name="bookCover" id="bookCover">
+        </div>
+        
+        <button class="btn bg-blue-600 w-full text-white uppercase">add book</button>
+    </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partails/head.ejs') %> 
+<body>
+    <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1>welcome to the library <%= user.firstName %> </h1>
+        <% books.forEach(book)=>{ %>
+            <div class="card">
+                <p><%= book.bookName %> </p>
+            </div>
+       <% } %> 
+    </div>
+</body>
+</html>

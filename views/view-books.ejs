@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partails/head.ejs') %> 
+
+<body>
+    <%- include('./partails/nav.ejs') %> 
+    <div class="container">
+        <h1>available books</h1>
+        
+        <div class="books md:grid grid-cols-3">
+        <% books.forEach(book=>{ %>
+            <div class="card shadow-md capitalize">
+                <div class="name  text-white p-3">
+                    <div class="card">
+                        <img src='data:<%= book.contentType %>;base64,<%= book.imageBase64  %>' alt="image"
+                            style="width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="detail my-2">
+                    <h1 class="text-lg"><span class="block">book name:  </span><%= book.bookName %> </h1>
+                    <p><span>author: </span><%= book.bookAuthor %> </p>
+                    <p><span>number of pages: </span><%= book.pages %> </p>
+                    <p><span>section: </span><%= book.section %> section </p>
+                </div>
+                <div class="btns flex gap-3 justify-center">
+                    <button class="border-2 capitalize border-blue-600 p-2 hover:bg-blue-600 hover:text-white"><a href="/edit-book/<%= book.id %> ">edit</a></button>
+                    <form action="/delete/<%= book.id %>?_method=DELETE" method="POST">
+                        <button class="border-2 capitalize border-red-600 p-2 hover:bg-red-600 hover:text-white">
+                            delete
+                        </button>
+                        </form>
+                </div>
+            </div>
+            <% }) %>     
+        </div>
+    </div>
+</body>
+</html>
